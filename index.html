@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jar of Love 💖</title>
+
+<style>
+body{
+    background: #ffe6f0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    padding-top:40px;
+}
+
+h1{
+    color:#ff4d88;
+}
+
+.jar{
+    width:200px;
+    height:300px;
+    margin:auto;
+    border:6px solid #ff4d88;
+    border-radius:40px;
+    position:relative;
+    background:white;
+    overflow:hidden;
+}
+
+.love-fill{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:0%;
+    background:linear-gradient(#ff99cc,#ff4d88);
+    transition:1s;
+}
+
+.percent{
+    font-size:28px;
+    margin-top:20px;
+    color:#ff4d88;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff1a66;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💖 Jar of Love 💖</h1>
+
+<div class="jar">
+    <div id="loveFill" class="love-fill"></div>
+</div>
+
+<div id="percentText" class="percent">
+Press the button ❤️
+</div>
+
+<button onclick="checkLove()">How Much She Loves Me?</button>
+
+<script>
+function checkLove(){
+
+    let percent = Math.floor(Math.random()*101);
+
+    document.getElementById("loveFill").style.height =
+        percent + "%";
+
+    document.getElementById("percentText").innerHTML =
+        percent + "% Love 💕";
+
+}
+</script>
+
+</body>
+</html>
