@@ -5,6 +5,134 @@
 <title>Jar of Love 💖</title>
 
 <style>
+
+body{
+    background: linear-gradient(#ffd6e7,#fff0f6);
+    font-family: "Comic Sans MS", cursive;
+    text-align:center;
+    padding-top:40px;
+}
+
+/* TITLE */
+h1{
+    color:#ff4d88;
+    font-size:40px;
+}
+
+/* BIG JAR */
+.jar{
+    width:280px;
+    height:420px;
+    margin:auto;
+    border:8px solid #ff4d88;
+    border-radius:60px;
+    position:relative;
+    background:white;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* LOVE FILL */
+.love-fill{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:0%;
+    background:linear-gradient(#ff99cc,#ff4d88);
+    transition:1s;
+}
+
+/* HEART FLOATING */
+.heart{
+    position:absolute;
+    font-size:24px;
+    animation:float 4s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-300px);opacity:0;}
+}
+
+.percent{
+    font-size:32px;
+    margin-top:20px;
+    color:#ff4d88;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover{
+    background:#ff1a66;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>💖 Our Jar of Love 💖</h1>
+
+<div class="jar" id="jar">
+    <div id="loveFill" class="love-fill"></div>
+</div>
+
+<div id="percentText" class="percent">
+0% Love 💕
+</div>
+
+<button onclick="increaseLove()">Add Love ❤️</button>
+
+<script>
+
+let love = 0;
+
+function increaseLove(){
+
+    if(love < 100){
+        love += 10;
+    }
+
+    document.getElementById("loveFill").style.height = love + "%";
+    document.getElementById("percentText").innerHTML = love + "% Love 💕";
+
+    createHeart();
+}
+
+/* Floating hearts animation */
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random()*80 + "%";
+    heart.style.bottom = "20px";
+
+    document.getElementById("jar").appendChild(heart);
+
+    setTimeout(()=>heart.remove(),4000);
+}
+
+</script>
+
+</body>
+</html>!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jar of Love 💖</title>
+
+<style>
 body{
     background: #ffe6f0;
     font-family: Arial, sans-serif;
